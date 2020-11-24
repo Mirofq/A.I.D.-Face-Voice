@@ -33,63 +33,8 @@
                 android:value=".ui.MainActivity" />
         </activity>
         <activity
-            android:name=".ui.FaceVerificationActivity"
-            android:label="@string/face_verification"
-            android:launchMode="singleTop"
-            android:parentActivityName=".ui.VerificationMenuActivity"
-            android:screenOrientation="portrait" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.MainActivity" />
-        </activity>
-        <activity
-            android:name=".ui.PersonVerificationActivity"
-            android:label="@string/person_verification"
-            android:launchMode="singleTop"
-            android:parentActivityName=".ui.VerificationMenuActivity"
-            android:screenOrientation="portrait" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.MainActivity" />
-        </activity>
-        <activity
-            android:name=".ui.IdentificationActivity"
-            android:label="@string/identification"
-            android:launchMode="singleTop"
-            android:parentActivityName=".ui.MainActivity"
-            android:screenOrientation="portrait" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.MainActivity" />
-        </activity>
-        <activity
-            android:name=".ui.GroupingActivity"
-            android:label="@string/grouping"
-            android:launchMode="singleTop"
-            android:parentActivityName=".ui.MainActivity"
-            android:screenOrientation="portrait" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.MainActivity" />
-        </activity>
-        <activity
-            android:name=".ui.FindSimilarFaceActivity"
-            android:label="@string/find_similar_faces"
-            android:launchMode="singleTop"
-            android:parentActivityName=".ui.MainActivity"
-            android:screenOrientation="portrait" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.MainActivity" />
-        </activity>
-        <activity
             android:name=".ui.SelectImageActivity"
             android:label="@string/select_an_image"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.VerificationMenuActivity"
-            android:label="@string/verification"
-            android:parentActivityName=".ui.MainActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".persongroupmanagement.PersonGroupListActivity"
@@ -140,42 +85,6 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.DetectionActivity" />
-        </activity>
-        <activity
-            android:name=".log.VerificationLogActivity"
-            android:label="@string/verification_log"
-            android:parentActivityName=".ui.FaceVerificationActivity"
-            android:screenOrientation="portrait" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.FaceVerificationActivity" />
-        </activity>
-        <activity
-            android:name=".log.FindSimilarFaceLogActivity"
-            android:label="@string/find_similar_face_log"
-            android:parentActivityName=".ui.FindSimilarFaceActivity"
-            android:screenOrientation="portrait" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.FindSimilarFaceActivity" />
-        </activity>
-        <activity
-            android:name=".log.GroupingLogActivity"
-            android:label="@string/grouping_log"
-            android:parentActivityName=".ui.GroupingActivity"
-            android:screenOrientation="portrait" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.GroupingActivity" />
-        </activity>
-        <activity
-            android:name=".log.IdentificationLogActivity"
-            android:label="@string/identification_log"
-            android:parentActivityName=".ui.IdentificationActivity"
-            android:screenOrientation="portrait" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.IdentificationActivity" />
         </activity>
     </application>
 

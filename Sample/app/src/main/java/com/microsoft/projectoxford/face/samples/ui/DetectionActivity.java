@@ -1,35 +1,3 @@
-//
-// Copyright (c) Microsoft. All rights reserved.
-// Licensed under the MIT license.
-//
-// Microsoft Cognitive Services (formerly Project Oxford): https://www.microsoft.com/cognitive-services
-//
-// Microsoft Cognitive Services (formerly Project Oxford) GitHub:
-// https://github.com/Microsoft/Cognitive-Face-Android
-//
-// Copyright (c) Microsoft Corporation
-// All rights reserved.
-//
-// MIT License:
-// Permission is hereby granted, free of charge, to any person obtaining
-// a copy of this software and associated documentation files (the
-// "Software"), to deal in the Software without restriction, including
-// without limitation the rights to use, copy, modify, merge, publish,
-// distribute, sublicense, and/or sell copies of the Software, and to
-// permit persons to whom the Software is furnished to do so, subject to
-// the following conditions:
-//
-// The above copyright notice and this permission notice shall be
-// included in all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED ""AS IS"", WITHOUT WARRANTY OF ANY KIND,
-// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
-// LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-// OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-// WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-//
 package com.microsoft.projectoxford.face.samples.ui;
 
 import android.app.ProgressDialog;
@@ -95,23 +63,14 @@ public class DetectionActivity extends AppCompatActivity {
                         params[0],  /* Input stream of image to detect */
                         true,       /* Whether to return face ID */
                         true,       /* Whether to return face landmarks */
-                        /* Which face attributes to analyze, currently we support:
-                           age,gender,headPose,smile,facialHair */
+                        /* Which face attributes to analyze, in this project we support:
+                           smile, emotion */
                         new FaceServiceClient.FaceAttributeType[] {
-                                FaceServiceClient.FaceAttributeType.Age,
-                                FaceServiceClient.FaceAttributeType.Gender,
+
                                 FaceServiceClient.FaceAttributeType.Smile,
-                                FaceServiceClient.FaceAttributeType.Glasses,
-                                FaceServiceClient.FaceAttributeType.FacialHair,
+
                                 FaceServiceClient.FaceAttributeType.Emotion,
-                                FaceServiceClient.FaceAttributeType.HeadPose,
-                                FaceServiceClient.FaceAttributeType.Accessories,
-                                FaceServiceClient.FaceAttributeType.Blur,
-                                FaceServiceClient.FaceAttributeType.Exposure,
-                                FaceServiceClient.FaceAttributeType.Hair,
-                                FaceServiceClient.FaceAttributeType.Makeup,
-                                FaceServiceClient.FaceAttributeType.Noise,
-                                FaceServiceClient.FaceAttributeType.Occlusion
+
                         });
             } catch (Exception e) {
                 mSucceed = false;
@@ -250,10 +209,10 @@ public class DetectionActivity extends AppCompatActivity {
     }
 
     // View the log of service calls.
-    public void viewLog(View view) {
-        Intent intent = new Intent(this, DetectionLogActivity.class);
-        startActivity(intent);
-    }
+    //public void viewLog(View view) {
+        //Intent intent = new Intent(this, DetectionLogActivity.class);
+        //startActivity(intent);
+    //}
 
     // Show the result on screen when detection is done.
     private void setUiAfterDetection(Face[] result, boolean succeed) {
@@ -386,78 +345,15 @@ public class DetectionActivity extends AppCompatActivity {
 
             // Show the face details.
             DecimalFormat formatter = new DecimalFormat("#0.0");
-            String face_description = String.format("Age: %s  Gender: %s\nHair: %s  FacialHair: %s\nMakeup: %s  %s\nForeheadOccluded: %s  Blur: %s\nEyeOccluded: %s  %s\n" +
-                            "MouthOccluded: %s  Noise: %s\nGlassesType: %s\nHeadPose: %s\nAccessories: %s",
-                    faces.get(position).faceAttributes.age,
-                    faces.get(position).faceAttributes.gender,
-                    getHair(faces.get(position).faceAttributes.hair),
-                    getFacialHair(faces.get(position).faceAttributes.facialHair),
-                    getMakeup((faces.get(position)).faceAttributes.makeup),
-                    getEmotion(faces.get(position).faceAttributes.emotion),
-                    faces.get(position).faceAttributes.occlusion.foreheadOccluded,
-                    faces.get(position).faceAttributes.blur.blurLevel,
-                    faces.get(position).faceAttributes.occlusion.eyeOccluded,
-                    faces.get(position).faceAttributes.exposure.exposureLevel,
-                    faces.get(position).faceAttributes.occlusion.mouthOccluded,
-                    faces.get(position).faceAttributes.noise.noiseLevel,
-                    faces.get(position).faceAttributes.glasses,
-                    getHeadPose(faces.get(position).faceAttributes.headPose),
-                    getAccessories(faces.get(position).faceAttributes.accessories)
+            String face_description = String.format("\n\n\n\n\n" +
+                                    "\n\n\nEmotion: %s",
+
+                    getEmotion(faces.get(position).faceAttributes.emotion)
+
                     );
             ((TextView) convertView.findViewById(R.id.text_detected_face)).setText(face_description);
 
             return convertView;
-        }
-
-        private String getHair(Hair hair) {
-            if (hair.hairColor.length == 0)
-            {
-                if (hair.invisible)
-                    return "Invisible";
-                else
-                    return "Bald";
-            }
-            else
-            {
-                int maxConfidenceIndex = 0;
-                double maxConfidence = 0.0;
-
-                for (int i = 0; i < hair.hairColor.length; ++i)
-                {
-                    if (hair.hairColor[i].confidence > maxConfidence)
-                    {
-                        maxConfidence = hair.hairColor[i].confidence;
-                        maxConfidenceIndex = i;
-                    }
-                }
-
-                return hair.hairColor[maxConfidenceIndex].color.toString();
-            }
-        }
-
-        private String getMakeup(Makeup makeup) {
-            return  (makeup.eyeMakeup || makeup.lipMakeup) ? "Yes" : "No" ;
-        }
-
-        private String getAccessories(Accessory[] accessories) {
-            if (accessories.length == 0)
-            {
-                return "NoAccessories";
-            }
-            else
-            {
-                String[] accessoriesList = new String[accessories.length];
-                for (int i = 0; i < accessories.length; ++i)
-                {
-                    accessoriesList[i] = accessories[i].type.toString();
-                }
-
-                return TextUtils.join(",", accessoriesList);
-            }
-        }
-
-        private String getFacialHair(FacialHair facialHair) {
-            return (facialHair.moustache + facialHair.beard + facialHair.sideburns > 0) ? "Yes" : "No";
         }
 
         private String getEmotion(Emotion emotion)
@@ -468,16 +364,6 @@ public class DetectionActivity extends AppCompatActivity {
             {
                 emotionValue = emotion.anger;
                 emotionType = "Anger";
-            }
-            if (emotion.contempt > emotionValue)
-            {
-                emotionValue = emotion.contempt;
-                emotionType = "Contempt";
-            }
-            if (emotion.disgust > emotionValue)
-            {
-                emotionValue = emotion.disgust;
-                emotionType = "Disgust";
             }
             if (emotion.fear > emotionValue)
             {
@@ -499,17 +385,9 @@ public class DetectionActivity extends AppCompatActivity {
                 emotionValue = emotion.sadness;
                 emotionType = "Sadness";
             }
-            if (emotion.surprise > emotionValue)
-            {
-                emotionValue = emotion.surprise;
-                emotionType = "Surprise";
-            }
             return String.format("%s: %f", emotionType, emotionValue);
         }
 
-        private String getHeadPose(HeadPose headPose)
-        {
-            return String.format("Pitch: %s, Roll: %s, Yaw: %s", headPose.pitch, headPose.roll, headPose.yaw);
-        }
+
     }
 }
