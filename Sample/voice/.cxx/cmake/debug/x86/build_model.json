@@ -175,6 +175,7 @@
       "project": {
         "compilerSettingsCacheFolder": "C:\\Users\\User\\AndroidStudioProjects\\Cognitive-Face-Android\\Sample\\.cxx",
         "cxxFolder": "C:\\Users\\User\\AndroidStudioProjects\\Cognitive-Face-Android\\Sample\\.cxx",
+        "ideBuildTargetAbi": "x86,armeabi-v7a,armeabi",
         "isBuildOnlyTargetAbiEnabled": true,
         "isCmakeBuildCohabitationEnabled": false,
         "isNativeCompilerSettingsCacheEnabled": false,
@@ -198,10 +199,7 @@
     "objFolder": "C:\\Users\\User\\AndroidStudioProjects\\Cognitive-Face-Android\\Sample\\voice\\build\\intermediates\\cmake\\debug\\obj",
     "variantName": "debug",
     "validAbiList": [
-      "ARMEABI_V7A",
-      "ARM64_V8A",
-      "X86",
-      "X86_64"
+      "X86"
     ],
     "prefabDirectory": "C:\\Users\\User\\AndroidStudioProjects\\Cognitive-Face-Android\\Sample\\voice\\.cxx\\cmake\\debug\\prefab",
     "prefabPackageDirectoryList": []
