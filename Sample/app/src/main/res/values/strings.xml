@@ -8,6 +8,7 @@
 
     <!-- Main activity -->
     <string name="detection">Detect Emotion</string>
+    <string name="detectionvoice">Voice</string>
     <string name="face_verification">Face to Face Verification</string>
     <string name="person_verification">Face to Person Verification</string>
     <string name="verification">Verification</string>

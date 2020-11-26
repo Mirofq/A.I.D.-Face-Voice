@@ -1,0 +1,18 @@
+# ninja log v5
+0	240	628090173	CMakeFiles/vokaturi-lib.dir/src/main/cpp/vokaturi-lib.cpp.o	4400e30ad84fdf99
+4	258	628090173	CMakeFiles/vokaturi-lib.dir/src/main/cpp/Vokaturi9.c.o	22489dbb825f6f46
+258	327	628090173	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libvokaturi-lib.so	69eb0a9b66d89a6c
+0	9	0	clean	3fb7b3a60c32a095
+0	7	0	clean	3fb7b3a60c32a095
+2	178	628090734	CMakeFiles/vokaturi-lib.dir/src/main/cpp/vokaturi-lib.cpp.o	4400e30ad84fdf99
+5	193	628090734	CMakeFiles/vokaturi-lib.dir/src/main/cpp/Vokaturi9.c.o	22489dbb825f6f46
+193	254	628090734	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libvokaturi-lib.so	69eb0a9b66d89a6c
+0	8	0	clean	3fb7b3a60c32a095
+1	9	0	clean	3fb7b3a60c32a095
+2	206	628090777	CMakeFiles/vokaturi-lib.dir/src/main/cpp/vokaturi-lib.cpp.o	4400e30ad84fdf99
+5	213	628090777	CMakeFiles/vokaturi-lib.dir/src/main/cpp/Vokaturi9.c.o	22489dbb825f6f46
+213	276	628090777	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libvokaturi-lib.so	69eb0a9b66d89a6c
+0	8	0	clean	3fb7b3a60c32a095
+2	218	628090816	CMakeFiles/vokaturi-lib.dir/src/main/cpp/vokaturi-lib.cpp.o	4400e30ad84fdf99
+5	230	628090816	CMakeFiles/vokaturi-lib.dir/src/main/cpp/Vokaturi9.c.o	22489dbb825f6f46
+230	297	628090816	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libvokaturi-lib.so	69eb0a9b66d89a6c

@@ -19,6 +19,8 @@ tools:context=".ui.MainActivity">
     android:layout_above="@id/hidden">
 
 
+
+
     <ImageView
         android:id="@+id/hidden"
         android:layout_width="match_parent"
@@ -45,6 +47,19 @@ tools:context=".ui.MainActivity">
         android:layout_marginTop="@dimen/view_marginTop"
         android:onClick="detection"
         style="@style/ButtonStyle" />
+
+    <Button
+        android:id="@+id/buttonvoice"
+        style="@style/ButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+
+
+        android:layout_marginTop="@dimen/view_marginTop"
+        android:layout_weight="1"
+        android:onClick="detectionvoice"
+        android:text="@string/detectionvoice" />
 
 </LinearLayout>
 

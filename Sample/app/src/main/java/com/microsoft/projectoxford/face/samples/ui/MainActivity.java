@@ -28,10 +28,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    //public void verification(View view) {
-        //Intent intent = new Intent(this, VerificationMenuActivity.class);
-        //startActivity(intent);
-    //}
+    public void detectionvoice(View view) {
+        Intent intent = new Intent(this, com.example.android.depressiontest.MainActivity.class);
+        startActivity(intent);
+    }
 
     //public void grouping(View view) {
         //Intent intent = new Intent(this, GroupingActivity.class);

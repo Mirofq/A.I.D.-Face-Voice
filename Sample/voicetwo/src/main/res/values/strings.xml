@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">AID DEPRESSION TEST</string>
+    <string name="app_label">A.I.D.</string>
+    <string name="app_fullname">Am I Depressed</string>
+    <string name="app_startvoice">Click To Begin</string>
+</resources>
