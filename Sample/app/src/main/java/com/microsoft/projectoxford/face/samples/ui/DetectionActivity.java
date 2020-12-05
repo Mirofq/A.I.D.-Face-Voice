@@ -22,20 +22,11 @@ import android.widget.TextView;
 import com.microsoft.projectoxford.face.FaceServiceClient;
 import com.microsoft.projectoxford.face.contract.Emotion;
 import com.microsoft.projectoxford.face.contract.Face;
-import com.microsoft.projectoxford.face.contract.FacialHair;
-import com.microsoft.projectoxford.face.contract.HeadPose;
-import com.microsoft.projectoxford.face.contract.Accessory;
-import com.microsoft.projectoxford.face.contract.Blur;
-import com.microsoft.projectoxford.face.contract.Exposure;
-import com.microsoft.projectoxford.face.contract.Hair;
-import com.microsoft.projectoxford.face.contract.Makeup;
-import com.microsoft.projectoxford.face.contract.Noise;
-import com.microsoft.projectoxford.face.contract.Occlusion;
 import com.microsoft.projectoxford.face.samples.R;
 import com.microsoft.projectoxford.face.samples.helper.ImageHelper;
 import com.microsoft.projectoxford.face.samples.helper.LogHelper;
 import com.microsoft.projectoxford.face.samples.helper.SampleApp;
-import com.microsoft.projectoxford.face.samples.log.DetectionLogActivity;
+
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -139,6 +130,7 @@ public class DetectionActivity extends AppCompatActivity {
         outState.putParcelable("ImageUri", mImageUri);
     }
 
+
     // Recover the saved state when the activity is recreated.
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
@@ -208,11 +200,11 @@ public class DetectionActivity extends AppCompatActivity {
         setAllButtonsEnabledStatus(false);
     }
 
-    // View the log of service calls.
-    //public void viewLog(View view) {
-        //Intent intent = new Intent(this, DetectionLogActivity.class);
-        //startActivity(intent);
-    //}
+    // View the questionnaire page.
+    public void viewQuestion(View view) {
+        Intent intent = new Intent(this, QuestionFaceActivity.class);
+        startActivity(intent);
+    }
 
     // Show the result on screen when detection is done.
     private void setUiAfterDetection(Face[] result, boolean succeed) {
@@ -345,8 +337,8 @@ public class DetectionActivity extends AppCompatActivity {
 
             // Show the face details.
             DecimalFormat formatter = new DecimalFormat("#0.0");
-            String face_description = String.format("\n\n\n\n\n" +
-                                    "\n\n\nEmotion: %s",
+            String face_description = String.format("\n\n\n\n" +
+                                    "\n\nEmotion: %s",
 
                     getEmotion(faces.get(position).faceAttributes.emotion)
 

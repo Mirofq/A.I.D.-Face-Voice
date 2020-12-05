@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/User/AndroidStudioProjects/Cognitive-Face-Android/Sample/voice
+# Install script for directory: C:/Users/User/AndroidStudioProjects/A.I.D.-Face-Voice/Sample/voice
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/User/AndroidStudioProjects/Cognitive-Face-Android/Sample/voice/.cxx/cmake/debug/arm64-v8a/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/User/AndroidStudioProjects/A.I.D.-Face-Voice/Sample/voice/.cxx/cmake/debug/arm64-v8a/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

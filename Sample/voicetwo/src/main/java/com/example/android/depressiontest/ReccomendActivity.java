@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+
+
 public class ReccomendActivity extends AppCompatActivity {
 
     TextView Disclaimer;
@@ -30,7 +32,7 @@ public class ReccomendActivity extends AppCompatActivity {
         TombolMainMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(),MainActivity.class);
+                Intent i = new Intent(getApplicationContext(),StartActivity.class);
                 startActivity(i);
             }
         });

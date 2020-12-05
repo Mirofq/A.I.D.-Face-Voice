@@ -5,9 +5,9 @@
     "environmentVariables": []
   },
   "cmake": {
-    "cmakeArtifactsBaseFolder": "C:\\Users\\User\\AndroidStudioProjects\\Cognitive-Face-Android\\Sample\\voice\\.cxx\\cmake\\release\\arm64-v8a",
-    "cmakeServerLogFile": "C:\\Users\\User\\AndroidStudioProjects\\Cognitive-Face-Android\\Sample\\voice\\.cxx\\cmake\\release\\arm64-v8a\\cmake_server_log.txt",
-    "cmakeWrappingBaseFolder": "C:\\Users\\User\\AndroidStudioProjects\\Cognitive-Face-Android\\Sample\\voice\\.cxx\\cxx\\release\\arm64-v8a",
+    "cmakeArtifactsBaseFolder": "C:\\Users\\User\\AndroidStudioProjects\\A.I.D.-Face-Voice\\Sample\\voice\\.cxx\\cmake\\release\\arm64-v8a",
+    "cmakeServerLogFile": "C:\\Users\\User\\AndroidStudioProjects\\A.I.D.-Face-Voice\\Sample\\voice\\.cxx\\cmake\\release\\arm64-v8a\\cmake_server_log.txt",
+    "cmakeWrappingBaseFolder": "C:\\Users\\User\\AndroidStudioProjects\\A.I.D.-Face-Voice\\Sample\\voice\\.cxx\\cxx\\release\\arm64-v8a",
     "effectiveConfiguration": {
       "name": "traditional-android-studio-cmake-environment",
       "description": "Composite reified CMakeSettings configuration",
@@ -15,7 +15,7 @@
       "inheritEnvironments": [
         "ndk"
       ],
-      "buildRoot": "C:\\Users\\User\\AndroidStudioProjects\\Cognitive-Face-Android\\Sample\\voice\\.cxx\\cmake\\release\\arm64-v8a",
+      "buildRoot": "C:\\Users\\User\\AndroidStudioProjects\\A.I.D.-Face-Voice\\Sample\\voice\\.cxx\\cmake\\release\\arm64-v8a",
       "cmakeToolchain": "C:\\Users\\User\\AppData\\Local\\Android\\Sdk\\ndk\\21.1.6352462\\build\\cmake\\android.toolchain.cmake",
       "cmakeExecutable": "C:\\Users\\User\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\cmake.exe",
       "variables": [
@@ -25,7 +25,7 @@
         },
         {
           "name": "CMAKE_FIND_ROOT_PATH",
-          "value": "C:\\Users\\User\\AndroidStudioProjects\\Cognitive-Face-Android\\Sample\\voice\\.cxx\\cmake\\release\\prefab\\arm64-v8a\\prefab"
+          "value": "C:\\Users\\User\\AndroidStudioProjects\\A.I.D.-Face-Voice\\Sample\\voice\\.cxx\\cmake\\release\\prefab\\arm64-v8a\\prefab"
         },
         {
           "name": "CMAKE_BUILD_TYPE",
@@ -61,7 +61,7 @@
         },
         {
           "name": "CMAKE_LIBRARY_OUTPUT_DIRECTORY",
-          "value": "C:\\Users\\User\\AndroidStudioProjects\\Cognitive-Face-Android\\Sample\\voice\\build\\intermediates\\cmake\\release\\obj\\arm64-v8a"
+          "value": "C:\\Users\\User\\AndroidStudioProjects\\A.I.D.-Face-Voice\\Sample\\voice\\build\\intermediates\\cmake\\release\\obj\\arm64-v8a"
         },
         {
           "name": "CMAKE_MAKE_PROGRAM",
@@ -78,14 +78,14 @@
       ]
     }
   },
-  "cxxBuildFolder": "C:\\Users\\User\\AndroidStudioProjects\\Cognitive-Face-Android\\Sample\\voice\\.cxx\\cmake\\release\\arm64-v8a",
+  "cxxBuildFolder": "C:\\Users\\User\\AndroidStudioProjects\\A.I.D.-Face-Voice\\Sample\\voice\\.cxx\\cmake\\release\\arm64-v8a",
   "info": {
     "abi": "ARM64_V8A",
     "bitness": 64,
     "deprecated": false,
     "default": true
   },
-  "originalCxxBuildFolder": "C:\\Users\\User\\AndroidStudioProjects\\Cognitive-Face-Android\\Sample\\voice\\.cxx\\cmake\\release\\arm64-v8a",
+  "originalCxxBuildFolder": "C:\\Users\\User\\AndroidStudioProjects\\A.I.D.-Face-Voice\\Sample\\voice\\.cxx\\cmake\\release\\arm64-v8a",
   "variant": {
     "buildSystemArgumentList": [],
     "buildTargetSet": [],
@@ -104,12 +104,12 @@
         "ninjaExe": "C:\\Users\\User\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe"
       },
       "cmakeToolchainFile": "C:\\Users\\User\\AppData\\Local\\Android\\Sdk\\ndk\\21.1.6352462\\build\\cmake\\android.toolchain.cmake",
-      "cxxFolder": "C:\\Users\\User\\AndroidStudioProjects\\Cognitive-Face-Android\\Sample\\voice\\.cxx",
+      "cxxFolder": "C:\\Users\\User\\AndroidStudioProjects\\A.I.D.-Face-Voice\\Sample\\voice\\.cxx",
       "gradleModulePathName": ":voice",
-      "intermediatesFolder": "C:\\Users\\User\\AndroidStudioProjects\\Cognitive-Face-Android\\Sample\\voice\\build\\intermediates",
-      "makeFile": "C:\\Users\\User\\AndroidStudioProjects\\Cognitive-Face-Android\\Sample\\voice\\CMakeLists.txt",
-      "moduleBuildFile": "C:\\Users\\User\\AndroidStudioProjects\\Cognitive-Face-Android\\Sample\\voice\\build.gradle",
-      "moduleRootFolder": "C:\\Users\\User\\AndroidStudioProjects\\Cognitive-Face-Android\\Sample\\voice",
+      "intermediatesFolder": "C:\\Users\\User\\AndroidStudioProjects\\A.I.D.-Face-Voice\\Sample\\voice\\build\\intermediates",
+      "makeFile": "C:\\Users\\User\\AndroidStudioProjects\\A.I.D.-Face-Voice\\Sample\\voice\\CMakeLists.txt",
+      "moduleBuildFile": "C:\\Users\\User\\AndroidStudioProjects\\A.I.D.-Face-Voice\\Sample\\voice\\build.gradle",
+      "moduleRootFolder": "C:\\Users\\User\\AndroidStudioProjects\\A.I.D.-Face-Voice\\Sample\\voice",
       "ndkDefaultAbiList": [
         "ARMEABI_V7A",
         "ARM64_V8A",
@@ -173,12 +173,12 @@
       "ndkDefaultStl": "LIBCXX_STATIC",
       "ndkVersion": "21.1.6352462",
       "project": {
-        "compilerSettingsCacheFolder": "C:\\Users\\User\\AndroidStudioProjects\\Cognitive-Face-Android\\Sample\\.cxx",
-        "cxxFolder": "C:\\Users\\User\\AndroidStudioProjects\\Cognitive-Face-Android\\Sample\\.cxx",
+        "compilerSettingsCacheFolder": "C:\\Users\\User\\AndroidStudioProjects\\A.I.D.-Face-Voice\\Sample\\.cxx",
+        "cxxFolder": "C:\\Users\\User\\AndroidStudioProjects\\A.I.D.-Face-Voice\\Sample\\.cxx",
         "isBuildOnlyTargetAbiEnabled": true,
         "isCmakeBuildCohabitationEnabled": false,
         "isNativeCompilerSettingsCacheEnabled": false,
-        "rootBuildGradleFolder": "C:\\Users\\User\\AndroidStudioProjects\\Cognitive-Face-Android\\Sample",
+        "rootBuildGradleFolder": "C:\\Users\\User\\AndroidStudioProjects\\A.I.D.-Face-Voice\\Sample",
         "sdkFolder": "C:\\Users\\User\\AppData\\Local\\Android\\Sdk",
         "isPrefabEnabled": false
       },
@@ -195,7 +195,7 @@
         "SYSTEM": {}
       }
     },
-    "objFolder": "C:\\Users\\User\\AndroidStudioProjects\\Cognitive-Face-Android\\Sample\\voice\\build\\intermediates\\cmake\\release\\obj",
+    "objFolder": "C:\\Users\\User\\AndroidStudioProjects\\A.I.D.-Face-Voice\\Sample\\voice\\build\\intermediates\\cmake\\release\\obj",
     "variantName": "release",
     "validAbiList": [
       "ARMEABI_V7A",
@@ -203,8 +203,8 @@
       "X86",
       "X86_64"
     ],
-    "prefabDirectory": "C:\\Users\\User\\AndroidStudioProjects\\Cognitive-Face-Android\\Sample\\voice\\.cxx\\cmake\\release\\prefab",
+    "prefabDirectory": "C:\\Users\\User\\AndroidStudioProjects\\A.I.D.-Face-Voice\\Sample\\voice\\.cxx\\cmake\\release\\prefab",
     "prefabPackageDirectoryList": []
   },
-  "prefabFolder": "C:\\Users\\User\\AndroidStudioProjects\\Cognitive-Face-Android\\Sample\\voice\\.cxx\\cmake\\release\\prefab\\arm64-v8a"
+  "prefabFolder": "C:\\Users\\User\\AndroidStudioProjects\\A.I.D.-Face-Voice\\Sample\\voice\\.cxx\\cmake\\release\\prefab\\arm64-v8a"
 }

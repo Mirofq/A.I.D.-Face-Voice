@@ -4,25 +4,20 @@
     <!-- Please refer to https://azure.microsoft.com/en-us/services/cognitive-services/face/ to get your subscription key -->
     <!-- If you have subscription key with its corresponding endpoint, you can add them here to use the service -->
     <string name="subscription_key">INSERT_SUBSCRIPTION_KEY_HERE</string>
-    <string name="endpoint">INSERT_ENDPOINT_HERE_face/v1.0/</string>
+    <string name="endpoint">INSERT_ENDPOINT_HEREface/v1.0/</string>
 
     <!-- Main activity -->
     <string name="detection">Detect Emotion</string>
+    <string name="start">Start</string>
     <string name="detectionvoice">Voice</string>
-    <string name="face_verification">Face to Face Verification</string>
-    <string name="person_verification">Face to Person Verification</string>
-    <string name="verification">Verification</string>
-    <string name="identification">Identification</string>
-    <string name="grouping">Grouping</string>
-    <string name="find_similar_faces">Find Similar Faces</string>
     <string name="detection_description">Detect faces, face landmarks, pose, smile, glasses, gender, and age.</string>
-    <string name="verification_description">Authentication between two faces or between a face and a person.</string>
-    <string name="grouping_description">Group faces based on similarity.</string>
-    <string name="find_similar_face_description">Search for similar-looking faces.</string>
-    <string name="identification_description">Identify the person from a face.</string>
+
 
     <!-- Tips to get subscription key shown on main activity-->
-    <string name="app_name">A.I.D Face</string>
+    <string name="app_name">A.I.D.</string>
+    <string name="app_detail">AM I DEPRESSED?</string>
+    <string name="welcome">Welcome</string>
+    <string name="activity">Activity</string>
     <string name="add_subscription_key_tip_title">Subscription Key is Needed</string>
     <string name="add_subscription_key_tip">Please put your subscription key with its corresponding endpoint to source file \"app/res/values/strings.xml\" to enable Face API calls.</string>
 
@@ -54,11 +49,11 @@
     <string name="delete">Delete</string>
     <string name="done_and_save">Save</string>
 
-    <string name="person_group_list">Person Group List</string>
+    <string name="result_test">Result</string>
     <string name="person_group_list_tip">- Tap on a group to edit.\n- Long tap to delete.</string>
     <string name="add_person_group">Add Person Group</string>
 
-    <string name="person_group">Person Group</string>
+    <string name="recommend">Recommendations</string>
     <string name="person_group_tip">- Tap on a person to edit.\n- Long press to delete.</string>
     <string name="person_group_name">Person group name:</string>
     <string name="type_in_person_group_name_tip">Name (within 30 characters)</string>
@@ -92,7 +87,7 @@
 
     <!-- Logs -->
     <string name="log">Log:</string>
-    <string name="detection_log">Detection Log</string>
+    <string name="question">Questionnaire</string>
     <string name="verification_log">Verification Log</string>
     <string name="find_similar_face_log">Find Similar Face Log</string>
     <string name="grouping_log">Grouping Log</string>
@@ -107,5 +102,6 @@
     <string name="user_provided_description_data">User data</string>
     <string name="user_provided_person_group_name">Person group name</string>
     <string name="user_provided_person_group_description_data">User data</string>
+    <string name="cannotopencamera">Cannot use the camera without permission</string>
 
 </resources>

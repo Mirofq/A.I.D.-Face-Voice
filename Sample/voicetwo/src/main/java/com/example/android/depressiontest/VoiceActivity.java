@@ -171,7 +171,9 @@ public class VoiceActivity extends AppCompatActivity {
 
         showEmojiBasedOnMetrics(emotionProbabilities);
         progressBarNeutrality.setProgress(normalizeForProgressBar(emotionProbabilities.Neutrality));
+
         progressBarHappiness.setProgress(normalizeForProgressBar(emotionProbabilities.Happiness));
+
         progressBarSadness.setProgress(normalizeForProgressBar(emotionProbabilities.Sadness));
         progressBarAnger.setProgress(normalizeForProgressBar(emotionProbabilities.Anger));
         progressBarFear.setProgress(normalizeForProgressBar(emotionProbabilities.Fear));

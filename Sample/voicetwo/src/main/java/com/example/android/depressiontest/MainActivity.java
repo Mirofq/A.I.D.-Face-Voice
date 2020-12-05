@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    TextView Introduksi;
+    //TextView Introduksi;
     //Button VoiceTest;
     Button StartTest;
     //Button TestInfo;
@@ -20,11 +20,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-         TextView Introduksi = (TextView)findViewById(R.id.AIDText);
-         Introduksi.setText("@string/app_label");
+         //TextView Introduksi = (TextView)findViewById(R.id.AIDText);
+         //Introduksi.setText("@string/app_label");
 
-        TextView appfullname = (TextView)findViewById(R.id.AmID);
-        appfullname.setText("@string/app_fullname");
+        //TextView appfullname = (TextView)findViewById(R.id.AmID);
+        //appfullname.setText("@string/app_fullname");
 
                 //+ "This test is conducted for early detection purposes.");
 
