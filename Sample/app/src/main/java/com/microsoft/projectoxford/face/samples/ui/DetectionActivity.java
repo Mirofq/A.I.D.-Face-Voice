@@ -15,10 +15,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.android.depressiontest.VoiceActivity;
 import com.microsoft.projectoxford.face.FaceServiceClient;
 import com.microsoft.projectoxford.face.contract.Emotion;
 import com.microsoft.projectoxford.face.contract.Face;
@@ -41,6 +43,7 @@ public class DetectionActivity extends AppCompatActivity {
     // Background task of face detection.
     private class DetectionTask extends AsyncTask<InputStream, String, Face[]> {
         private boolean mSucceed = true;
+
 
         @Override
         protected Face[] doInBackground(InputStream... params) {
@@ -108,10 +111,30 @@ public class DetectionActivity extends AppCompatActivity {
     ProgressDialog mProgressDialog;
 
     // When the activity is created, set all the member variables to initial state.
+    String Nama;
+    String EmotionType;
+    EditText UserName;
+    Button StartQues;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detection);
+        Nama = getIntent().getStringExtra("nameofuser");
+
+
+        // View the questionnaire page.
+        StartQues = (Button) findViewById(R.id.view_question);
+        StartQues.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent v = new Intent(getApplicationContext(), StartQuestion.class);
+                v.putExtra("nameofuser", Nama);
+                v.putExtra("voiceemotion", EmotionType);
+
+                startActivity(v);
+            }
+        });
 
         mProgressDialog = new ProgressDialog(this);
         mProgressDialog.setTitle(getString(R.string.progress_dialog_title));
@@ -200,11 +223,7 @@ public class DetectionActivity extends AppCompatActivity {
         setAllButtonsEnabledStatus(false);
     }
 
-    // View the questionnaire page.
-    public void viewQuestion(View view) {
-        Intent intent = new Intent(this, QuestionFaceActivity.class);
-        startActivity(intent);
-    }
+
 
     // Show the result on screen when detection is done.
     private void setUiAfterDetection(Face[] result, boolean succeed) {
@@ -259,7 +278,7 @@ public class DetectionActivity extends AppCompatActivity {
         Button detectButton = (Button) findViewById(R.id.detect);
         detectButton.setEnabled(isEnabled);
 
-        Button ViewLogButton = (Button) findViewById(R.id.view_log);
+        Button ViewLogButton = (Button) findViewById(R.id.view_question);
         ViewLogButton.setEnabled(isEnabled);
     }
 
@@ -338,11 +357,11 @@ public class DetectionActivity extends AppCompatActivity {
             // Show the face details.
             DecimalFormat formatter = new DecimalFormat("#0.0");
             String face_description = String.format("\n\n\n\n" +
-                                    "\n\nEmotion: %s",
+                            "\n\nEmotion: %s",
 
                     getEmotion(faces.get(position).faceAttributes.emotion)
 
-                    );
+            );
             ((TextView) convertView.findViewById(R.id.text_detected_face)).setText(face_description);
 
             return convertView;
@@ -350,34 +369,34 @@ public class DetectionActivity extends AppCompatActivity {
 
         private String getEmotion(Emotion emotion)
         {
-            String emotionType = "";
+            EmotionType = "";
             double emotionValue = 0.0;
             if (emotion.anger > emotionValue)
             {
                 emotionValue = emotion.anger;
-                emotionType = "Anger";
+                EmotionType = "Anger";
             }
             if (emotion.fear > emotionValue)
             {
                 emotionValue = emotion.fear;
-                emotionType = "Fear";
+                EmotionType = "Fear";
             }
             if (emotion.happiness > emotionValue)
             {
                 emotionValue = emotion.happiness;
-                emotionType = "Happiness";
+                EmotionType = "Happiness";
             }
             if (emotion.neutral > emotionValue)
             {
                 emotionValue = emotion.neutral;
-                emotionType = "Neutral";
+                EmotionType = "Neutral";
             }
             if (emotion.sadness > emotionValue)
             {
                 emotionValue = emotion.sadness;
-                emotionType = "Sadness";
+                EmotionType = "Sadness";
             }
-            return String.format("%s: %f", emotionType, emotionValue);
+            return String.format("%s: %f", EmotionType, emotionValue);
         }
 
 

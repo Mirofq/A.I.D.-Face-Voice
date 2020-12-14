@@ -49,13 +49,18 @@
             android:screenOrientation="portrait" />
 
         <activity
+            android:name=".ui.Recommendation"
+            android:label="@string/recommend"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name=".ui.MainActivity"
             android:label="@string/detection"
             android:screenOrientation="portrait" />
 
         <activity
             android:name=".ui.DetectionActivity"
-            android:label="@string/detection"
+            android:label="@string/face_detection"
             android:launchMode="singleTop"
             android:parentActivityName=".ui.MainActivity"
             android:screenOrientation="portrait" >
@@ -67,6 +72,11 @@
         <activity
             android:name=".ui.SelectImageActivity"
             android:label="@string/select_an_image"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.StartQuestion"
+            android:label="@string/question"
             android:screenOrientation="portrait" />
 
         <activity
@@ -89,17 +99,9 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.QuestionFaceActivity" />
         </activity>
-        <activity
-            android:name=".ui.Recommendation"
-            android:label="@string/recommend"
-            android:launchMode="singleTop"
-            android:windowSoftInputMode="adjustNothing"
-            android:parentActivityName=".ui.ResultFaceActivity"
-            android:screenOrientation="portrait" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.ResultFaceActivity" />
-        </activity>
+
+
+
         <activity
             android:name=".persongroupmanagement.PersonActivity"
             android:label="@string/person"

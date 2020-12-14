@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 
-public class Recommendation extends ResultFaceActivity{
+public class Recommendation extends AppCompatActivity {
 
 
     TextView Disclaimer;
@@ -21,8 +21,8 @@ public class Recommendation extends ResultFaceActivity{
         super.onCreate(savedInstanceState);
         setContentView(com.example.android.depressiontest.R.layout.activity_recommend);
 
-        Disclaimer = findViewById(com.example.android.depressiontest.R.id.keteranganDisclaimer);
-        WhatIsDepression = findViewById(com.example.android.depressiontest.R.id.apaItuDepresi);
+        Disclaimer = findViewById(com.example.android.depressiontest.R.id.infoDisclaimer);
+        WhatIsDepression = findViewById(com.example.android.depressiontest.R.id.DefineDepression);
         TombolMainMenu = findViewById(com.example.android.depressiontest.R.id.MainMenu);
 
         Disclaimer.setText("Please note: This self-test is meant to give you insight in your mood state. "+

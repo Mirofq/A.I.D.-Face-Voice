@@ -4,4 +4,17 @@
     <string name="app_fullname">Am I Depressed?</string>
     <string name="app_startvoice">Voice Detection</string>
     <string name="app_startface">Face Detection</string>
+    <string name="voiceEmotion">Emotion Detected</string>
+    <string name="start_ques">Start Questionnaire</string>
+    <string name="textNeutral">neutrality</string>
+    <string name="textHappy">happiness</string>
+    <string name="textSad">sadness</string>
+    <string name="textAnger">anger</string>
+    <string name="textFear">fear</string>
+
+    <string name="app_detail">AM I DEPRESSED?</string>
+    <string name="voicedetection">Voice Emotion Recognition</string>
+    <string name="question">PHQ-9 Questionnaire</string>
+    <string name="result_test">Result</string>
+    <string name="recommend">Recommendations</string>
 </resources>

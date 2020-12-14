@@ -10,12 +10,10 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.android.depressiontest.VoiceActivity;
 
 public class StartActivityFace extends AppCompatActivity {
 
     EditText UserName;
-
     RadioButton Male;
     RadioButton Female;
     RadioButton Age1;
@@ -42,26 +40,7 @@ public class StartActivityFace extends AppCompatActivity {
         Age5 = findViewById(com.example.android.depressiontest.R.id.usia5);
         Age6 = findViewById(com.example.android.depressiontest.R.id.usia6);
         SubmitButton = (Button)findViewById(com.example.android.depressiontest.R.id.btnSubmit);
-        Age2.setChecked(true);
-
-        Male.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (Male.isChecked()==true){
-                    Female.setChecked(false);
-                }
-            }
-        });
-
-        Female.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (Female.isChecked()==true){
-                    Male.setChecked(false);
-                }
-            }
-        });
-
+        //Age2.setChecked(true);
 
         Age1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -149,28 +128,21 @@ public class StartActivityFace extends AppCompatActivity {
 
                 if (UserName.getText().toString().equals("")){
                     Toast.makeText(getApplicationContext(),
-                            "Please insert your name.",
+                            "Please insert your name",
                             Toast.LENGTH_SHORT).show();
                 }
-                //else if (Sex.getText().toString().equals("")){
-                    //Toast.makeText(getApplicationContext(),
-                            //"Please insert your gender.",
-                            //Toast.LENGTH_SHORT).show();
-                //}
+                //else if (Gender.getText().toString().equals("")){
+                //Toast.makeText(getApplicationContext(),
+                //"Please insert your gender",
+                //Toast.LENGTH_SHORT).show();
+                //  }
                 else {
                     Intent i=new Intent(getApplicationContext(), MainActivity.class);
-                    i.putExtra("NamaUser", UserName.getText().toString());
+                    i.putExtra("nameofuser", UserName.getText().toString());
                     startActivity(i);
                 }
-
-
-                    Intent i=new Intent(getApplicationContext(), ResultFaceActivity.class);
-                    i.putExtra("NamaUser", UserName.getText().toString());
-
-
             }
         });
-
     }
 }
 

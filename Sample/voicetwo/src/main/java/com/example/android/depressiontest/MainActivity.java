@@ -20,25 +20,25 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-         //TextView Introduksi = (TextView)findViewById(R.id.AIDText);
-         //Introduksi.setText("@string/app_label");
+        //TextView Introduksi = (TextView)findViewById(R.id.AIDText);
+        //Introduksi.setText("@string/app_label");
 
         //TextView appfullname = (TextView)findViewById(R.id.AmID);
         //appfullname.setText("@string/app_fullname");
 
-                //+ "This test is conducted for early detection purposes.");
+        //+ "This test is conducted for early detection purposes.");
 
 
         //VoiceTest = (Button)findViewById(R.id.btnVoice);
         //VoiceTest.setOnClickListener(new View.OnClickListener() {
-            //@Override
-           // public void onClick(View view) {
-                //Intent v=new Intent(getApplicationContext(), VoiceActivity.class);
+        //@Override
+        // public void onClick(View view) {
+        //Intent v=new Intent(getApplicationContext(), VoiceActivity.class);
 
 
-                //startActivity(v);
-            //}
-       // });
+        //startActivity(v);
+        //}
+        // });
 
         StartTest = (Button)findViewById(R.id.MulaiTest);
         StartTest.setOnClickListener(new View.OnClickListener() {
@@ -53,12 +53,12 @@ public class MainActivity extends AppCompatActivity {
 
         //TestInfo = (Button)findViewById(R.id.InfoTes);
         //TestInfo.setOnClickListener(new View.OnClickListener() {
-            //@Override
-            //public void onClick(View view) {
-                //Intent m=new Intent(getApplicationContext(), ReccomendActivity.class);
+        //@Override
+        //public void onClick(View view) {
+        //Intent m=new Intent(getApplicationContext(), ReccomendActivity.class);
 
-                //startActivity(m);
-            //}
+        //startActivity(m);
+        //}
         //});
 
     }

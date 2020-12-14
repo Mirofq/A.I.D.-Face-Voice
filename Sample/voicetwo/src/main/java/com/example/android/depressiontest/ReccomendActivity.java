@@ -1,5 +1,6 @@
 package com.example.android.depressiontest;
 
+import android.content.ComponentName;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
@@ -11,29 +12,36 @@ import android.widget.TextView;
 
 
 public class ReccomendActivity extends AppCompatActivity {
-
     TextView Disclaimer;
     TextView WhatIsDepression;
-    Button TombolMainMenu;
+    TextView HotlineNum;
+    Button MainMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recommend);
 
-        Disclaimer = findViewById(R.id.keteranganDisclaimer);
-        WhatIsDepression = findViewById(R.id.apaItuDepresi);
-        TombolMainMenu = findViewById(R.id.MainMenu);
+        Disclaimer = findViewById(R.id.infoDisclaimer);
+        WhatIsDepression = findViewById(R.id.DefineDepression);
+        HotlineNum = findViewById(R.id.contactlist);
+        MainMenu = findViewById(R.id.MainMenu);
+
 
         Disclaimer.setText("Please note: This self-test is meant to give you insight in your mood state. "+
-        "This test is explicitly not suitable for diagnosis.This test can not replace professional help. When in doubt, please contact your general practitioner." +
-        " No rights can be derived from the results of this test.");
+                "This test is explicitly not suitable for diagnosis.This test cannot replace professional help. When in doubt, please contact your general practitioner." +
+                " No rights can be derived from the results of this test.");
 
-        TombolMainMenu.setOnClickListener(new View.OnClickListener() {
+        MainMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(),StartActivity.class);
-                startActivity(i);
+
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.setComponent(new ComponentName("com.microsoft.projectoxford.face.samples","com.microsoft.projectoxford.face.samples.ui.Homepage"));
+                startActivity(intent);
+
+                //Intent i = new Intent(getApplicationContext(),MainActivity.class);
+                //startActivity(i);
             }
         });
     }
@@ -48,14 +56,10 @@ public class ReccomendActivity extends AppCompatActivity {
     }
 
     public void browser3(View view){
-        Intent browser3Intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/herusantoso23/"));
+        Intent browser3Intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.aia.com.my/en/what-matters/seetheotherside/mental-health-helpline-resources.html"));
         startActivity(browser3Intent);
     }
 
-    public void browser4(View view){
-        Intent browser4Intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/herusantoso23/"));
-        startActivity(browser4Intent);
-   }
 
 
 }

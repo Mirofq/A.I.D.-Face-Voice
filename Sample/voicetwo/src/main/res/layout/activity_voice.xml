@@ -24,10 +24,12 @@
             android:layout_height="80dp"/>
 
         <TextView
+            android:src="@string/voiceEmotion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:text="Emotion metrics"
+            android:scaleType="fitXY"
+            android:id="@+id/EmotionTextView"
             android:layout_marginBottom="15dp"
             android:textSize="18dp"
             android:gravity="center_horizontal" />
@@ -102,28 +104,23 @@
             android:paddingTop="5dp"
             android:id="@+id/actionStatus"
             android:textAlignment="center"
-            android:text="Press below button to start listening"
+            android:text="READ: The Big Brown Fox Jumps Over the Lazy Dog."
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal" />
 
-    </LinearLayout>
+        <com.example.android.depressiontest.PlayPauseButton
+            android:id="@+id/playPauseButton"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="164dp"
+            android:layout_marginLeft="164dp"
+            android:layout_marginEnd="167dp"
+            android:layout_marginRight="167dp"
+            android:layout_marginBottom="201dp" />
 
-    <com.example.android.depressiontest.PlayPauseButton
-        android:id="@+id/playPauseButton"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_gravity="center"
-        android:layout_marginStart="162dp"
-        android:layout_marginLeft="162dp"
-        android:layout_marginTop="405dp"
-        android:layout_marginEnd="169dp"
-        android:layout_marginRight="169dp"
-        android:layout_marginBottom="-484dp" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/answerQuestion"
@@ -135,11 +132,12 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_gravity="center"
-        android:layout_marginStart="62dp"
-        android:layout_marginLeft="62dp"
-        android:layout_marginEnd="71dp"
-        android:layout_marginRight="71dp"
-        android:layout_marginBottom="117dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="158dp"
+        android:layout_marginEnd="69dp"
+        android:layout_marginRight="69dp"
+        android:layout_marginBottom="134dp"
         android:background="#0D47A1"
         android:text="proceed with questionnaire"
         android:textColor="#FFFFFF"

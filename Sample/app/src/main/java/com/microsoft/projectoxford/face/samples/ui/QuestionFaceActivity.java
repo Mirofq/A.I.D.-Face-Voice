@@ -10,9 +10,10 @@ import android.widget.TextView;
 
 import com.example.android.depressiontest.ResultActivity;
 
-public class QuestionFaceActivity extends SelectImageActivity{
+public class   QuestionFaceActivity extends AppCompatActivity {
 
     String Nama;
+    String EmotionType;
     TextView Instruction;
     TextView Question1;
     RadioButton ck1;
@@ -72,7 +73,9 @@ public class QuestionFaceActivity extends SelectImageActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(com.example.android.depressiontest.R.layout.activity_question);
-        Nama = getIntent().getStringExtra("NamaUser");
+        Nama = getIntent().getStringExtra("nameofuser");
+        EmotionType = getIntent().getStringExtra("voiceemotion");
+
         Instruction = findViewById(com.example.android.depressiontest.R.id.Instruksi);
         Question1 = findViewById(com.example.android.depressiontest.R.id.Soal1);
         ck1 = findViewById(com.example.android.depressiontest.R.id.CheckBox1);
@@ -576,9 +579,10 @@ public class QuestionFaceActivity extends SelectImageActivity{
                 int NilaiTotal = Nilai1 + Nilai2 + Nilai3 + Nilai4 + Nilai5 + Nilai6 + Nilai7 + Nilai8 + Nilai9 + Nilai10;
 
 
-                Intent i=new Intent(getApplication(), ResultFaceActivity.class);
+                Intent i = new Intent(getApplication(), ResultFaceActivity.class);
                 i.putExtra("nilai", NilaiTotal);
-                i.putExtra("NamaUser", Nama);
+                i.putExtra("nameofuser", Nama);
+                i.putExtra("voiceemotion", EmotionType);
                 startActivity(i);
             }
         });

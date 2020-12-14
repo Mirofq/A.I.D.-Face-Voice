@@ -11,6 +11,7 @@ import android.widget.TextView;
 public class QuestionActivity extends AppCompatActivity {
 
     String Nama;
+    String VoiceEmo;
     TextView Instruction;
     TextView Question1;
     RadioButton ck1;
@@ -70,7 +71,8 @@ public class QuestionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
-        Nama = getIntent().getStringExtra("NamaUser");
+        Nama = getIntent().getStringExtra("nameofuser");
+        VoiceEmo = getIntent().getStringExtra("voiceemotion");
         Instruction = findViewById(R.id.Instruksi);
         Question1 = findViewById(R.id.Soal1);
         ck1 = findViewById(R.id.CheckBox1);
@@ -144,7 +146,7 @@ public class QuestionActivity extends AppCompatActivity {
         ck1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck1.isChecked()==true) {
+                if (ck1.isChecked() == true) {
                     Nilai1 = 0;
                 }
             }
@@ -154,7 +156,7 @@ public class QuestionActivity extends AppCompatActivity {
         ck2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck2.isChecked()==true){
+                if (ck2.isChecked() == true) {
                     Nilai1 = 1;
                 }
             }
@@ -164,7 +166,7 @@ public class QuestionActivity extends AppCompatActivity {
         ck3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck3.isChecked()==true){
+                if (ck3.isChecked() == true) {
                     Nilai1 = 2;
                 }
             }
@@ -174,7 +176,7 @@ public class QuestionActivity extends AppCompatActivity {
         ck4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck4.isChecked()==true){
+                if (ck4.isChecked() == true) {
                     Nilai1 = 3;
                 }
             }
@@ -187,7 +189,7 @@ public class QuestionActivity extends AppCompatActivity {
         ck5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck5.isChecked()==true){
+                if (ck5.isChecked() == true) {
                     Nilai2 = 0;
                 }
             }
@@ -197,7 +199,7 @@ public class QuestionActivity extends AppCompatActivity {
         ck6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck6.isChecked()==true){
+                if (ck6.isChecked() == true) {
                     Nilai2 = 1;
                 }
             }
@@ -207,7 +209,7 @@ public class QuestionActivity extends AppCompatActivity {
         ck7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck7.isChecked()==true){
+                if (ck7.isChecked() == true) {
                     Nilai2 = 2;
                 }
             }
@@ -217,7 +219,7 @@ public class QuestionActivity extends AppCompatActivity {
         ck8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck8.isChecked()==true){
+                if (ck8.isChecked() == true) {
                     Nilai2 = 3;
                 }
             }
@@ -229,7 +231,7 @@ public class QuestionActivity extends AppCompatActivity {
         ck9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck9.isChecked()==true){
+                if (ck9.isChecked() == true) {
                     Nilai3 = 0;
                 }
             }
@@ -239,7 +241,7 @@ public class QuestionActivity extends AppCompatActivity {
         ck10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck10.isChecked()==true){
+                if (ck10.isChecked() == true) {
                     Nilai3 = 1;
                 }
             }
@@ -249,7 +251,7 @@ public class QuestionActivity extends AppCompatActivity {
         ck11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck11.isChecked()==true){
+                if (ck11.isChecked() == true) {
                     Nilai3 = 2;
                 }
             }
@@ -259,7 +261,7 @@ public class QuestionActivity extends AppCompatActivity {
         ck12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck12.isChecked()==true){
+                if (ck12.isChecked() == true) {
                     Nilai3 = 3;
                 }
             }
@@ -273,7 +275,7 @@ public class QuestionActivity extends AppCompatActivity {
         ck13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck13.isChecked()==true){
+                if (ck13.isChecked() == true) {
                     Nilai4 = 0;
                 }
             }
@@ -283,7 +285,7 @@ public class QuestionActivity extends AppCompatActivity {
         ck14.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck14.isChecked()==true){
+                if (ck14.isChecked() == true) {
                     Nilai4 = 1;
                 }
             }
@@ -293,7 +295,7 @@ public class QuestionActivity extends AppCompatActivity {
         ck15.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck15.isChecked()==true){
+                if (ck15.isChecked() == true) {
                     Nilai4 = 2;
                 }
             }
@@ -303,7 +305,7 @@ public class QuestionActivity extends AppCompatActivity {
         ck16.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck16.isChecked()==true){
+                if (ck16.isChecked() == true) {
                     Nilai4 = 3;
                 }
             }
@@ -315,7 +317,7 @@ public class QuestionActivity extends AppCompatActivity {
         ck17.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck17.isChecked()==true){
+                if (ck17.isChecked() == true) {
                     Nilai5 = 0;
                 }
             }
@@ -325,7 +327,7 @@ public class QuestionActivity extends AppCompatActivity {
         ck18.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck18.isChecked()==true){
+                if (ck18.isChecked() == true) {
                     Nilai5 = 1;
                 }
             }
@@ -335,7 +337,7 @@ public class QuestionActivity extends AppCompatActivity {
         ck19.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck19.isChecked()==true){
+                if (ck19.isChecked() == true) {
                     Nilai5 = 2;
                 }
             }
@@ -345,12 +347,11 @@ public class QuestionActivity extends AppCompatActivity {
         ck20.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck20.isChecked()==true){
+                if (ck20.isChecked() == true) {
                     Nilai5 = 3;
                 }
             }
         });
-
 
 
         Question6.setText("Feeling bad about yourself - or that you are a failure or have let yourself or your family down");
@@ -359,7 +360,7 @@ public class QuestionActivity extends AppCompatActivity {
         ck21.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck21.isChecked()==true){
+                if (ck21.isChecked() == true) {
                     Nilai6 = 0;
                 }
             }
@@ -369,7 +370,7 @@ public class QuestionActivity extends AppCompatActivity {
         ck22.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck22.isChecked()==true){
+                if (ck22.isChecked() == true) {
                     Nilai6 = 1;
                 }
             }
@@ -379,7 +380,7 @@ public class QuestionActivity extends AppCompatActivity {
         ck23.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck23.isChecked()==true){
+                if (ck23.isChecked() == true) {
                     Nilai6 = 2;
                 }
             }
@@ -390,12 +391,11 @@ public class QuestionActivity extends AppCompatActivity {
         ck24.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck24.isChecked()==true){
+                if (ck24.isChecked() == true) {
                     Nilai6 = 3;
                 }
             }
         });
-
 
 
         Question7.setText("Trouble concentrating on things, such as reading the newspaper or watching television");
@@ -404,7 +404,7 @@ public class QuestionActivity extends AppCompatActivity {
         ck25.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck25.isChecked()==true){
+                if (ck25.isChecked() == true) {
                     Nilai7 = 0;
                 }
             }
@@ -414,7 +414,7 @@ public class QuestionActivity extends AppCompatActivity {
         ck26.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck26.isChecked()==true){
+                if (ck26.isChecked() == true) {
                     Nilai7 = 1;
                 }
             }
@@ -424,7 +424,7 @@ public class QuestionActivity extends AppCompatActivity {
         ck27.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck27.isChecked()==true){
+                if (ck27.isChecked() == true) {
                     Nilai7 = 2;
                 }
             }
@@ -434,7 +434,7 @@ public class QuestionActivity extends AppCompatActivity {
         ck28.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck28.isChecked()==true){
+                if (ck28.isChecked() == true) {
                     Nilai7 = 3;
                 }
             }
@@ -446,7 +446,7 @@ public class QuestionActivity extends AppCompatActivity {
         ck29.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck29.isChecked()==true){
+                if (ck29.isChecked() == true) {
                     Nilai8 = 0;
                 }
             }
@@ -456,7 +456,7 @@ public class QuestionActivity extends AppCompatActivity {
         ck30.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck30.isChecked()==true){
+                if (ck30.isChecked() == true) {
                     Nilai8 = 1;
                 }
             }
@@ -466,7 +466,7 @@ public class QuestionActivity extends AppCompatActivity {
         ck31.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck31.isChecked()==true){
+                if (ck31.isChecked() == true) {
                     Nilai8 = 2;
                 }
             }
@@ -476,7 +476,7 @@ public class QuestionActivity extends AppCompatActivity {
         ck32.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck32.isChecked()==true){
+                if (ck32.isChecked() == true) {
                     Nilai8 = 3;
                 }
             }
@@ -488,7 +488,7 @@ public class QuestionActivity extends AppCompatActivity {
         ck33.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck33.isChecked()==true){
+                if (ck33.isChecked() == true) {
                     Nilai9 = 0;
                 }
             }
@@ -498,7 +498,7 @@ public class QuestionActivity extends AppCompatActivity {
         ck34.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck34.isChecked()==true){
+                if (ck34.isChecked() == true) {
                     Nilai9 = 1;
                 }
             }
@@ -508,7 +508,7 @@ public class QuestionActivity extends AppCompatActivity {
         ck35.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck35.isChecked()==true){
+                if (ck35.isChecked() == true) {
                     Nilai9 = 2;
                 }
             }
@@ -518,7 +518,7 @@ public class QuestionActivity extends AppCompatActivity {
         ck36.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck36.isChecked()==true){
+                if (ck36.isChecked() == true) {
                     Nilai9 = 3;
                 }
             }
@@ -530,7 +530,7 @@ public class QuestionActivity extends AppCompatActivity {
         ck37.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck37.isChecked()==true){
+                if (ck37.isChecked() == true) {
                     Nilai10 = 0;
                 }
             }
@@ -540,7 +540,7 @@ public class QuestionActivity extends AppCompatActivity {
         ck38.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck38.isChecked()==true){
+                if (ck38.isChecked() == true) {
                     Nilai10 = 1;
                 }
             }
@@ -550,7 +550,7 @@ public class QuestionActivity extends AppCompatActivity {
         ck39.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck39.isChecked()==true){
+                if (ck39.isChecked() == true) {
                     Nilai10 = 2;
                 }
             }
@@ -560,12 +560,11 @@ public class QuestionActivity extends AppCompatActivity {
         ck40.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ck40.isChecked()==true){
+                if (ck40.isChecked() == true) {
                     Nilai10 = 3;
                 }
             }
         });
-
 
 
         Next.setOnClickListener(new View.OnClickListener() {
@@ -574,11 +573,13 @@ public class QuestionActivity extends AppCompatActivity {
                 int NilaiTotal = Nilai1 + Nilai2 + Nilai3 + Nilai4 + Nilai5 + Nilai6 + Nilai7 + Nilai8 + Nilai9 + Nilai10;
 
 
-                Intent i=new Intent(getApplication(), ResultActivity.class);
+                Intent i = new Intent(getApplication(), ResultActivity.class);
                 i.putExtra("nilai", NilaiTotal);
-                i.putExtra("NamaUser", Nama);
+                i.putExtra("nameofuser", Nama);
+                i.putExtra("voiceemotion", VoiceEmo);
                 startActivity(i);
             }
         });
+
     }
 }

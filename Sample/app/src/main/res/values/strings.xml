@@ -3,13 +3,16 @@
 <resources>
     <!-- Please refer to https://azure.microsoft.com/en-us/services/cognitive-services/face/ to get your subscription key -->
     <!-- If you have subscription key with its corresponding endpoint, you can add them here to use the service -->
-    <string name="subscription_key">INSERT_SUBSCRIPTION_KEY_HERE</string>
-    <string name="endpoint">INSERT_ENDPOINT_HEREface/v1.0/</string>
+    <string name="subscription_key">895512f866884252a33e24dcc2b44e5e</string>
+    <string name="endpoint">https://aid.cognitiveservices.azure.com/face/v1.0/</string>
 
     <!-- Main activity -->
-    <string name="detection">Detect Emotion</string>
+    <string name="detection">Face Activity</string>
     <string name="start">Start</string>
+    <string name="start_ques">Start Questionnaire</string>
+    <string name="face_detection">Facial Emotion Recognition</string>
     <string name="detectionvoice">Voice</string>
+    <string name="startrecom">Recommendation</string>
     <string name="detection_description">Detect faces, face landmarks, pose, smile, glasses, gender, and age.</string>
 
 
@@ -87,7 +90,7 @@
 
     <!-- Logs -->
     <string name="log">Log:</string>
-    <string name="question">Questionnaire</string>
+    <string name="question">PHQ-9 Questionnaire</string>
     <string name="verification_log">Verification Log</string>
     <string name="find_similar_face_log">Find Similar Face Log</string>
     <string name="grouping_log">Grouping Log</string>

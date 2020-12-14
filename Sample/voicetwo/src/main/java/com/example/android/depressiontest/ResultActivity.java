@@ -6,20 +6,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.ImageView;
+
+//import junit.framework.Test;
 
 public class ResultActivity extends AppCompatActivity {
     TextView TestResult;
     TextView Disclaimer;
     Button viewRec;
     int nilaiInt;
-    String terimaNama;
-    TextView ScoreRange;
-    TextView NoDep;
-    TextView MildDep;
-    TextView ModDep;
-    TextView ModSevDep;
-    TextView SevDep;
+    ImageView ScoreRange;
     String getName;
+    String VoiceEmo;
 
 
     @Override
@@ -27,63 +25,146 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        TestResult = (TextView)findViewById(R.id.TestResult);
-        Disclaimer = (TextView)findViewById(R.id.Disclaimer);
-        ScoreRange = (TextView)findViewById(R.id.ScoreRange);
-        NoDep = (TextView)findViewById(R.id.NoDep);
-        MildDep = (TextView)findViewById(R.id.MildDep);
-        ModDep = (TextView)findViewById(R.id.ModDep);
-        ModSevDep = (TextView)findViewById(R.id.ModSevDep);
-        SevDep = (TextView)findViewById(R.id.SevDep);
+        TestResult = (TextView) findViewById(R.id.TestResult);
+        Disclaimer = (TextView) findViewById(R.id.Disclaimer);
+        //ScoreRange = (ImageView) findViewById(R.id.ScoreRange);
+
         //MainMenu = findViewById(R.id.ButtonMenu);
 
-        getName = getIntent().getStringExtra("NamaUser");
-        nilaiInt = getIntent().getIntExtra("nilai",0);
+        getName = getIntent().getStringExtra("nameofuser");
+        nilaiInt = getIntent().getIntExtra("nilai", 0);
+        VoiceEmo = getIntent().getStringExtra("voiceemotion");
 
-        if (nilaiInt <= 4){
-            TestResult.setText("Hi, " + getName + ", your PHQ-9 Score is " + nilaiInt +
-                    ". Your total score indicates that you have No Depression. ");
+        //Neutrality
+        if (nilaiInt <= 4 && "neutrality".equals(VoiceEmo)) {
+            TestResult.setText("\n Hi " + getName + "\n\n\n\n\n  Voice Emotion: " + VoiceEmo + "\n PHQ-9 Questionnaire Score: " + nilaiInt +
+                    "\n Total Result: No Depression"+
+                    "\n\n\n This indicates that you have no depression.");
+        } else if (nilaiInt <= 9 && "neutrality".equals(VoiceEmo)) {
+            TestResult.setText("\n Hi " + getName + "\n\n\n\n\n Voice Emotion: " + VoiceEmo + "\n PHQ-9 Questionnaire Score: " + nilaiInt +
+                    "\n Total Result: No Depression"+
+                    "\n\n\n This indicates that you have no depression.");
+        } else if (nilaiInt <= 14 && "neutrality".equals(VoiceEmo)) {
+            TestResult.setText("\n Hi " + getName + "\n\n\n\n\n Voice Emotion: " + VoiceEmo + "\n PHQ-9 Questionnaire Score: " + nilaiInt +
+                    "\n Total Result: Mild Depression"+
+                    "\n\n\n This indicates that you may have mild depression. Please contact recommended hotline numbers if your symptoms worsen and affects your daily activities.");
+        } else if (nilaiInt <= 22 && "neutrality".equals(VoiceEmo)) {
+            TestResult.setText("\n Hi " + getName + "\n\n\n\n\n Voice Emotion: " + VoiceEmo + "\n PHQ-9 Questionnaire Score: " + nilaiInt +
+                    "\n Total Result: Moderate Depression"+
+                    "\n\n\n This indicates that you may have moderate depression. We gladly suggest you to get counselling and/or therapy.");
+        } else if (nilaiInt > 22 && "neutrality".equals(VoiceEmo)) {
+            TestResult.setText("\n Hi " + getName + "\n\n\n\n\n Voice Emotion: " + VoiceEmo + "\n PHQ-9 Questionnaire Score: " + nilaiInt +
+                    "\n Total Result: Moderate Depression"+
+                    "\n\n\n This indicates that you may have moderate depression. We gladly suggest you to get counselling and/or therapy.");
         }
-        else if (nilaiInt <= 9){
-            TestResult.setText("Hi, " + getName + ", your PHQ-9 Score is " + nilaiInt +
-                    ". This indicates that you may have Mild Depression. Please contact the hotline numbers if your symptoms worsen and affects your daily activities. ");
+
+
+        //Happiness
+        if (nilaiInt <= 4 && "happiness".equals(VoiceEmo)) {
+            TestResult.setText("\n Hi " + getName + "\n\n\n\n\n  Voice Emotion: " + VoiceEmo + "\n PHQ-9 Questionnaire Score: " + nilaiInt +
+                    "\n Total Result: No Depression"+
+                    "\n\n\n This indicates that you have no depression.");
+        } else if (nilaiInt <= 9 && "happiness".equals(VoiceEmo)) {
+            TestResult.setText("\n Hi " + getName + "\n\n\n\n\n Voice Emotion: " + VoiceEmo + "\n PHQ-9 Questionnaire Score: " + nilaiInt +
+                    "\n Total Result: No Depression"+
+                    "\n\n\n This indicates that you have no depression.");
+        } else if (nilaiInt <= 14 && "happiness".equals(VoiceEmo)) {
+            TestResult.setText("\n Hi " + getName + "\n\n\n\n\n Voice Emotion: " + VoiceEmo + "\n PHQ-9 Questionnaire Score: " + nilaiInt +
+                    "\n Total Result: Mild Depression"+
+                    "\n\n\n This indicates that you may have mild depression. Please contact recommended hotline numbers if your symptoms worsen and affects your daily activities.");
+        } else if (nilaiInt <= 22 && "happiness".equals(VoiceEmo)) {
+            TestResult.setText("\n Hi " + getName + "\n\n\n\n\n Voice Emotion: " + VoiceEmo + "\n PHQ-9 Questionnaire Score: " + nilaiInt +
+                    "\n Total Result: Moderate Depression"+
+                    "\n\n\n This indicates that you may have moderate depression. We gladly suggest you to get counselling and/or therapy.");
+        } else if (nilaiInt > 22 && "happiness".equals(VoiceEmo)) {
+            TestResult.setText("\n Hi " + getName + "\n\n\n\n\n Voice Emotion: " + VoiceEmo + "\n PHQ-9 Questionnaire Score: " + nilaiInt +
+                    "\n Total Result: Moderate Depression"+
+                    "\n\n\n This indicates that you may have moderate depression. We gladly suggest you to get counselling and/or therapy.");
         }
-        else if (nilaiInt <=14){
-            TestResult.setText("Hi, " + getName + ", your PHQ-9 Score is " + nilaiInt +
-                    ". This indicates that you may have Moderate Depression. We gladly suggest you to meet your doctor.");
+
+
+        //Sadness
+        if (nilaiInt <= 4 && "sadness".equals(VoiceEmo)) {
+            TestResult.setText("\n Hi " + getName + "\n\n\n\n\n  Face Emotion: " + VoiceEmo + "\n PHQ-9 Questionnaire Score: " + nilaiInt +
+                    "\n Total Result: No Depression"+
+                    "\n\n\n This indicates that you have no depression.");
+        } else if (nilaiInt <= 9 && "sadness".equals(VoiceEmo)) {
+            TestResult.setText("\n Hi " + getName + "\n\n\n\n\n Face Emotion: " + VoiceEmo + "\n PHQ-9 Questionnaire Score: " + nilaiInt +
+                    "\n Total Result: Mild Depression"+
+                    "\n\n\n This indicates that you may have mild depression. Please do recommended self-treatment activities and contact recommended hotline numbers if your symptoms worsen.");
+        } else if (nilaiInt <= 14 && "sadness".equals(VoiceEmo)) {
+            TestResult.setText("\n Hi " + getName + "\n\n\n\n\n Face Emotion: " + VoiceEmo + "\n PHQ-9 Questionnaire Score: " + nilaiInt +
+                    "\n Total Result: Moderate Depression"+
+                    "\n\n\n This indicates that you may have moderate depression. We gladly suggest you to get counselling and/or therapy.");
+        } else if (nilaiInt <= 22 && "sadness".equals(VoiceEmo)) {
+            TestResult.setText("\n Hi " + getName + "\n\n\n\n\n Face Emotion: " + VoiceEmo + "\n PHQ-9 Questionnaire Score: " + nilaiInt +
+                    "\n Total Result: Moderate to Severe Depression"+
+                    "\n\n\n This indicates that you may have moderate to severe depression. We gladly suggest you to seek active treatment with medication and/or therapy.");
+        } else if (nilaiInt > 22 && "sadness".equals(VoiceEmo)) {
+            TestResult.setText("\n Hi " + getName + "\n\n\n\n\n Face Emotion: " + VoiceEmo + "\n PHQ-9 Questionnaire Score: " + nilaiInt +
+                    "\n Total Result: Severe Depression"+
+                    "\n\n\n This indicates that you may have severe depression. We gladly suggest you to refer yourself to mental health specialist.");
         }
-        else if (nilaiInt <=22){
-            TestResult.setText("Hi, " + getName + ", your PHQ-9 Score is " + nilaiInt +
-                    ". This indicates that you may have Moderate to Severe Depression. We gladly suggest you to meet your doctor.");
+
+        //Anger
+        if (nilaiInt <= 4 && "anger".equals(VoiceEmo)) {
+            TestResult.setText("\n Hi " + getName + "\n\n\n\n\n  Face Emotion: " + VoiceEmo + "\n PHQ-9 Questionnaire Score: " + nilaiInt +
+                    "\n Total Result: No Depression"+
+                    "\n\n\n This indicates that you have no depression.");
+        } else if (nilaiInt <= 9 && "anger".equals(VoiceEmo)) {
+            TestResult.setText("\n Hi " + getName + "\n\n\n\n\n Face Emotion: " + VoiceEmo + "\n PHQ-9 Questionnaire Score: " + nilaiInt +
+                    "\n Total Result: Mild Depression"+
+                    "\n\n\n This indicates that you may have mild depression. Please do recommended self-treatment activities and contact recommended hotline numbers if your symptoms worsen.");
+        } else if (nilaiInt <= 14 && "anger".equals(VoiceEmo)) {
+            TestResult.setText("\n Hi " + getName + "\n\n\n\n\n Face Emotion: " + VoiceEmo + "\n PHQ-9 Questionnaire Score: " + nilaiInt +
+                    "\n Total Result: Moderate Depression"+
+                    "\n\n\n This indicates that you may have moderate depression. We gladly suggest you to get counselling and/or therapy.");
+        } else if (nilaiInt <= 22 && "anger".equals(VoiceEmo)) {
+            TestResult.setText("\n Hi " + getName + "\n\n\n\n\n Face Emotion: " + VoiceEmo + "\n PHQ-9 Questionnaire Score: " + nilaiInt +
+                    "\n Total Result: Moderate to Severe Depression"+
+                    "\n\n\n This indicates that you may have moderate to severe depression. We gladly suggest you to seek active treatment with medication and/or therapy.");
+        } else if (nilaiInt > 22 && "anger".equals(VoiceEmo)) {
+            TestResult.setText("\n Hi " + getName + "\n\n\n\n\n Face Emotion: " + VoiceEmo + "\n PHQ-9 Questionnaire Score: " + nilaiInt +
+                    "\n Total Result: Severe Depression"+
+                    "\n\n\n This indicates that you may have severe depression. We gladly suggest you to refer yourself to mental health specialist.");
         }
-        else if (nilaiInt > 22){
-            TestResult.setText("Hi, " + getName + ", your PHQ-9 Score is " + nilaiInt +
-                    ". This indicates that you have severe depression. Please meet your doctor to get necessary treatment. ");
+
+        //Fear
+        if (nilaiInt <= 4 && "fear".equals(VoiceEmo)) {
+            TestResult.setText("\n Hi " + getName + "\n\n\n\n\n  Face Emotion: " + VoiceEmo + "\n PHQ-9 Questionnaire Score: " + nilaiInt +
+                    "\n Total Result: No Depression"+
+                    "\n\n\n This indicates that you have no depression.");
+        } else if (nilaiInt <= 9 && "fear".equals(VoiceEmo)) {
+            TestResult.setText("\n Hi " + getName + "\n\n\n\n\n Face Emotion: " + VoiceEmo + "\n PHQ-9 Questionnaire Score: " + nilaiInt +
+                    "\n Total Result: Mild Depression"+
+                    "\n\n\n This indicates that you may have mild depression. Please do recommended self-treatment activities and contact recommended hotline numbers if your symptoms worsen.");
+        } else if (nilaiInt <= 14 && "fear".equals(VoiceEmo)) {
+            TestResult.setText("\n Hi " + getName + "\n\n\n\n\n Face Emotion: " + VoiceEmo + "\n PHQ-9 Questionnaire Score: " + nilaiInt +
+                    "\n Total Result: Moderate Depression"+
+                    "\n\n\n This indicates that you may have moderate depression. We gladly suggest you to get counselling and/or therapy.");
+        } else if (nilaiInt <= 22 && "fear".equals(VoiceEmo)) {
+            TestResult.setText("\n Hi " + getName + "\n\n\n\n\n Face Emotion: " + VoiceEmo + "\n PHQ-9 Questionnaire Score: " + nilaiInt +
+                    "\n Total Result: Moderate to Severe Depression"+
+                    "\n\n\n This indicates that you may have moderate to severe depression. We gladly suggest you to seek active treatment with medication and/or therapy.");
+        } else if (nilaiInt > 22 && "fear".equals(VoiceEmo)) {
+            TestResult.setText("\n Hi " + getName + "\n\n\n\n\n Face Emotion: " + VoiceEmo + "\n PHQ-9 Questionnaire Score: " + nilaiInt +
+                    "\n Total Result: Severe Depression"+
+                    "\n\n\n This indicates that you may have severe depression. We gladly suggest you to refer yourself to mental health specialist.");
         }
 
-
-        ScoreRange.setText("Depression Score Range (PHQ-9):");
-
-        NoDep.setText("0 to 4: No Depression or Just Sad");
-        MildDep.setText("5 to 9: Mild Depression");
-        ModDep.setText("10 to 14: Moderate Depression");
-        ModSevDep.setText("15 to 19: Moderate to Severe Depression");
-        SevDep.setText("more than 20: Severe Depression");
-
-        Disclaimer.setText("PHQ-9, Patient Health Questionnaire 9:-" + " Developed by Drs Robert L Spitzer, Janet B.W. Williams, Kurt Kroenke and colleages, with an educational grant from Pfizer Inc."
-                + " No permission required to reproduce, translate, display or contribute.");
+        //Disclaimer.setText("\nPHQ-9, Patient Health Questionnaire 9:-" + "\nDeveloped by Drs Robert L Spitzer, Janet B.W. Williams, Kurt Kroenke and colleages, with an educational grant from Pfizer Inc."
+        // + "\nNo permission required to reproduce, translate, display or contribute.");
 
 
-        viewRec = (Button)findViewById(R.id.recList);
+        viewRec = (Button) findViewById(R.id.recList);
         viewRec.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent r =new Intent(getApplicationContext(), ReccomendActivity.class);
+                Intent r = new Intent(getApplicationContext(), ReccomendActivity.class);
 
 
                 startActivity(r);
             }
         });
-
     }
 }

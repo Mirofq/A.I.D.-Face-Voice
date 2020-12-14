@@ -22,7 +22,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/keteranganDisclaimer"
+            android:id="@+id/infoDisclaimer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/Disclaimer"
@@ -35,42 +35,52 @@
             android:gravity="center_horizontal" />
 
         <TextView
-            android:id="@+id/apaItuDepresi"
+            android:id="@+id/DefineDepression"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/keteranganDisclaimer"
+            android:layout_below="@id/infoDisclaimer"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
             android:onClick="browser1"
-            android:text="What is depression"
+            android:text="What is Depression"
             android:textColor="#000000"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/petunjukPenanganan"
+            android:id="@+id/selfguide"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/apaItuDepresi"
+            android:layout_below="@id/DefineDepression"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15dp"
             android:onClick="browser2"
-            android:text="Self-help guide"
+            android:text="Self-help Guide"
             android:textColor="#000000"
             android:textStyle="bold" />
 
+        <TextView
+            android:id="@+id/contactlist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/selfguide"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:onClick="browser3"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:text="List of Contact" />
+
 
         <Button
-            android:id="@+id/MainMenu"
-            android:layout_width="269dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/petunjukPenanganan"
-            android:layout_marginTop="19dp"
             android:background="#0D47A1"
+            android:layout_below="@id/contactlist"
+            android:layout_marginTop="50dp"
             android:text="Menu"
             android:textColor="#FFFFFF"
             android:textStyle="bold"
-            android:layout_centerHorizontal="true"
-            />
+            android:id="@+id/MainMenu"/>
 
     </RelativeLayout>
 

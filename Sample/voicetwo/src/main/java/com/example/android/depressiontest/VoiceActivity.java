@@ -28,6 +28,7 @@ public class VoiceActivity extends AppCompatActivity {
     private static final int PERMISSIONS_REQUEST_CODE = 5;
 
     private ImageView emojiEmotionImageView;
+    private TextView EmotionTextView;
     private ProgressBar progressBarNeutrality;
     private ProgressBar progressBarHappiness;
     private ProgressBar progressBarSadness;
@@ -48,19 +49,22 @@ public class VoiceActivity extends AppCompatActivity {
 
     Button answerQuestion;
 
+    String Nama;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_voice);
+        Nama = getIntent().getStringExtra("nameofuser");
 
         try {
             logD("About to instantiate the library");
-            vokaturiApi = Vokaturi.getInstance(com.example.android.depressiontest.VoiceActivity.this);
+            vokaturiApi = Vokaturi.getInstance(VoiceActivity.this);
         } catch (VokaturiException e) {
             e.printStackTrace();
         }
 
-        ActivityCompat.requestPermissions(com.example.android.depressiontest.VoiceActivity.this, new String[]{RECORD_AUDIO, WRITE_EXTERNAL_STORAGE}, PERMISSIONS_REQUEST_CODE);
+        ActivityCompat.requestPermissions(VoiceActivity.this, new String[]{RECORD_AUDIO, WRITE_EXTERNAL_STORAGE}, PERMISSIONS_REQUEST_CODE);
 
         initializeViews();
 
@@ -69,6 +73,7 @@ public class VoiceActivity extends AppCompatActivity {
 
     private void initializeViews() {
         emojiEmotionImageView = findViewById(R.id.emojiEmotionImageView);
+        EmotionTextView = findViewById(R.id.EmotionTextView);
         progressBarNeutrality = findViewById(R.id.progressBarNeutrality);
         progressBarHappiness = findViewById(R.id.progressBarHappiness);
         progressBarSadness = findViewById(R.id.progressBarSadness);
@@ -119,7 +124,7 @@ public class VoiceActivity extends AppCompatActivity {
         }
     }
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint({"SetTextI18n", "ResourceType"})
     private void setListeningUI() {
         actionStatus.setText("Press again to stop listening and analyze emotions");
         progressBarNeutrality.setIndeterminate(true);
@@ -128,6 +133,7 @@ public class VoiceActivity extends AppCompatActivity {
         progressBarAnger.setIndeterminate(true);
         progressBarFear.setIndeterminate(true);
         emojiEmotionImageView.setImageDrawable(getResources().getDrawable(R.drawable.emoji_default));
+        EmotionTextView.setText(getResources().getString(R.id.EmotionTextView));
     }
 
     @SuppressLint("SetTextI18n")
@@ -149,7 +155,7 @@ public class VoiceActivity extends AppCompatActivity {
 
     @SuppressLint("SetTextI18n")
     private void setNotListeningUI() {
-        actionStatus.setText("Press below button to start listening");
+        actionStatus.setText("READ: The Big Brown Fox Jumps over the Lazy Dog");
         progressBarNeutrality.setIndeterminate(false);
         progressBarHappiness.setIndeterminate(false);
         progressBarSadness.setIndeterminate(false);
@@ -171,13 +177,17 @@ public class VoiceActivity extends AppCompatActivity {
 
         showEmojiBasedOnMetrics(emotionProbabilities);
         progressBarNeutrality.setProgress(normalizeForProgressBar(emotionProbabilities.Neutrality));
-
         progressBarHappiness.setProgress(normalizeForProgressBar(emotionProbabilities.Happiness));
-
         progressBarSadness.setProgress(normalizeForProgressBar(emotionProbabilities.Sadness));
         progressBarAnger.setProgress(normalizeForProgressBar(emotionProbabilities.Anger));
         progressBarFear.setProgress(normalizeForProgressBar(emotionProbabilities.Fear));
 
+        showTextBasedOnMetrics(emotionProbabilities);
+        progressBarNeutrality.setProgress(normalizeForProgressBar(emotionProbabilities.Neutrality));
+        progressBarHappiness.setProgress(normalizeForProgressBar(emotionProbabilities.Happiness));
+        progressBarSadness.setProgress(normalizeForProgressBar(emotionProbabilities.Sadness));
+        progressBarAnger.setProgress(normalizeForProgressBar(emotionProbabilities.Anger));
+        progressBarFear.setProgress(normalizeForProgressBar(emotionProbabilities.Fear));
     }
 
     private int normalizeForProgressBar(double val) {
@@ -203,6 +213,21 @@ public class VoiceActivity extends AppCompatActivity {
         }
     }
 
+    @SuppressLint("ResourceType")
+    private void showTextBasedOnMetrics(EmotionProbabilities emotionProbabilities) {
+        Emotion capturedEmotion = Vokaturi.extractEmotion(emotionProbabilities);
+        if (capturedEmotion == Emotion.Neutral) {
+            EmotionTextView.setText(getResources().getString(R.string.textNeutral));
+        } else if (capturedEmotion == Emotion.Happy) {
+            EmotionTextView.setText(getResources().getString(R.string.textHappy));
+        } else if (capturedEmotion == Emotion.Sad) {
+            EmotionTextView.setText(getResources().getString(R.string.textSad));
+        } else if (capturedEmotion == Emotion.Angry) {
+            EmotionTextView.setText(getResources().getString(R.string.textAnger));
+        } else if (capturedEmotion == Emotion.Feared) {
+            EmotionTextView.setText(getResources().getString(R.string.textFear));
+        }
+    }
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
                                            @NonNull int[] grantResults) {
@@ -212,14 +237,13 @@ public class VoiceActivity extends AppCompatActivity {
                 Toast.makeText(this, "Audio recording permissions denied.", Toast.LENGTH_SHORT).show();
             }
         }
-
-
         answerQuestion = (Button)findViewById(R.id.answerQuestion);
         answerQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(getApplicationContext(), QuestionActivity.class);
-
+                Intent i=new Intent(getApplicationContext(), StartQuestionVoice.class);
+                i.putExtra("nameofuser", Nama);
+                i.putExtra("voiceemotion", EmotionTextView.getText().toString());
 
                 startActivity(i);
             }

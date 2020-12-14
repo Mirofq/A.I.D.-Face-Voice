@@ -15,6 +15,7 @@ public class Homepage extends AppCompatActivity {
 
     Button StartFace;
     Button StartVoice;
+    Button StartRecom;
 
 
     @Override
@@ -45,7 +46,16 @@ public class Homepage extends AppCompatActivity {
             }
         });
 
+        StartRecom = (Button)findViewById(R.id.MulaiRecom);
+        StartRecom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(getApplicationContext(), Recommendation.class);
 
+
+                startActivity(i);
+            }
+        });
 
 
     }

@@ -1,5 +1,3 @@
-<!-- Copyright (c) Microsoft. All rights reserved. -->
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -104,14 +102,13 @@
             style="@style/ButtonStyle" />
 
         <Button
-            android:id="@+id/view_log"
+            android:id="@+id/view_question"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/proceed_with_questionnaire"
             android:background="@drawable/button_background"
-            style="@style/ButtonStyle"
-            android:onClick="viewQuestion"/>
+            style="@style/ButtonStyle"/>
     </LinearLayout>
 
 </RelativeLayout>

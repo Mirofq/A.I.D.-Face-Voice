@@ -41,3 +41,8 @@
 6	330	628762542	CMakeFiles/vokaturi-lib.dir/src/main/cpp/vokaturi-lib.cpp.o	786ddb81e99a7f51
 10	344	628762542	CMakeFiles/vokaturi-lib.dir/src/main/cpp/Vokaturi9.c.o	811d2a1e3155a067
 344	626	628762542	../../../../build/intermediates/cmake/debug/obj/x86/libvokaturi-lib.so	1cd82b8f3defcc0
+0	7	0	clean	3fb7b3a60c32a095
+2	191	629666859	CMakeFiles/vokaturi-lib.dir/src/main/cpp/vokaturi-lib.cpp.o	786ddb81e99a7f51
+4	210	629666859	CMakeFiles/vokaturi-lib.dir/src/main/cpp/Vokaturi9.c.o	811d2a1e3155a067
+210	280	629666859	../../../../build/intermediates/cmake/debug/obj/x86/libvokaturi-lib.so	1cd82b8f3defcc0
+0	7	0	clean	3fb7b3a60c32a095

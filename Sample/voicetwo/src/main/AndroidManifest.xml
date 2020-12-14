@@ -12,11 +12,35 @@
 
 
 
-        <activity android:name=".StartActivity" />
-        <activity android:name=".VoiceActivity" />
-        <activity android:name=".QuestionActivity" />
-        <activity android:name=".ResultActivity" />
-        <activity android:name=".ReccomendActivity" />
+        <activity android:name=".StartActivity"
+            android:label="@string/app_detail"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".VoiceActivity"
+            android:label="@string/voicedetection"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".StartQuestionVoice"
+            android:label="@string/question"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".QuestionActivity"
+            android:label="@string/question"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".ResultActivity"
+            android:label="@string/result_test"
+            android:launchMode="singleTop"
+            android:parentActivityName=".QuestionActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".QuestionActivity" />
+        </activity>
+
+        <activity android:name=".ReccomendActivity"
+            android:label="@string/recommend"
+            android:screenOrientation="portrait" />
 
 
     </application>

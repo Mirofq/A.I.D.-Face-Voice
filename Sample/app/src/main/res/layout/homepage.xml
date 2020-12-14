@@ -84,5 +84,26 @@ android:layout_height="match_parent">
 
        />
 
+    <Button
+        android:id="@+id/MulaiRecom"
+        android:layout_width="337dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/AmID"
+        android:layout_alignLeft="@+id/AmID"
+        android:layout_alignEnd="@+id/AmID"
+        android:layout_alignRight="@id/AmID"
+        android:layout_marginTop="460dp"
+        android:layout_marginStart="-92dp"
+        android:layout_marginLeft="-92dp"
+        android:layout_marginEnd="-99dp"
+        android:layout_marginRight="-99dp"
+        android:layout_marginBottom="16dp"
+        android:background="#0D47A1"
+        android:text="@string/startrecom"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+
+        />
+
 
 </RelativeLayout>
